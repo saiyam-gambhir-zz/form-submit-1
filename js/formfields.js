@@ -13,7 +13,7 @@ var TextArea = function(textField) {
   this.textField = textField;
 }
 
-var CheckBox = function(checkBox) {
+var InputTypeCheckBox = function(checkBox) {
   this.checkBox = checkBox;
 }
 
@@ -30,7 +30,7 @@ var InputTypeUrl = function(inputField, regularEx) {
 InpuTypeText.prototype   = new FormFields();
 TextArea.prototype       = new FormFields();
 InputTypeEmail.prototype = new FormFields();
-InputTypeUrl.prototype = new FormFields();
+InputTypeUrl.prototype   = new FormFields();
 
 InpuTypeText.prototype.validate = function() {
   var flag = true;
@@ -67,7 +67,7 @@ InputTypeUrl.prototype.validate = function() {
   return false;
 }
 
-CheckBox.prototype.confirmation = function() {
+InputTypeCheckBox.prototype.confirmation = function() {
   this.checkBox.onchange = function() {
     if(this.checked == true) {
      if(confirm("Are You Sure you want to recieve notification ?")) {
